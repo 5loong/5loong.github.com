@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-09-01T20:42:31+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[神龙]]></title>
+  <link href="http://5loong.github.io/atom.xml" rel="self"/>
+  <link href="http://5loong.github.io/"/>
+  <updated>2013-09-01T21:59:04+08:00</updated>
+  <id>http://5loong.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    
+    <name><![CDATA[卧龙茗舌]]></name>
+    <email><![CDATA[godloong.com@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
