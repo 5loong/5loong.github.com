@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[神龙]]></title>
-  <link href="http://5loong.github.io/atom.xml" rel="self"/>
-  <link href="http://5loong.github.io/"/>
-  <updated>2013-09-07T10:33:50+08:00</updated>
-  <id>http://5loong.github.io/</id>
+  <link href="http://godloong.com/atom.xml" rel="self"/>
+  <link href="http://godloong.com/"/>
+  <updated>2013-09-07T10:38:17+08:00</updated>
+  <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
     <email><![CDATA[godloong.com@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[hello world]]></title>
-    <link href="http://5loong.github.io/blog/2013/09/01/hello-world/"/>
+    <link href="http://godloong.com/blog/2013/09/01/hello-world/"/>
     <updated>2013-09-01T22:56:00+08:00</updated>
-    <id>http://5loong.github.io/blog/2013/09/01/hello-world</id>
+    <id>http://godloong.com/blog/2013/09/01/hello-world</id>
     <content type="html"><![CDATA[<p>This is my first post in GITHUB.</p>
 ]]></content>
   </entry>

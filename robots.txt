@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://5loong.github.io/sitemap.xml 
+Sitemap: http://godloong.com/sitemap.xml 
