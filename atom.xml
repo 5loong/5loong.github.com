@@ -4,7 +4,7 @@
   <title><![CDATA[神龙]]></title>
   <link href="http://godloong.com/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2013-09-07T15:12:39+08:00</updated>
+  <updated>2013-09-10T00:17:15+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[使用C#创建Windows Services程序]]></title>
+    <link href="http://godloong.com/blog/2013/09/10/create-windows-services-with-c-sharp/"/>
+    <updated>2013-09-10T00:14:00+08:00</updated>
+    <id>http://godloong.com/blog/2013/09/10/create-windows-services-with-c-sharp</id>
+    <content type="html"><![CDATA[<p>PS.这是个草稿，时间太晚了，改天再完善。</p>
+
+<p>简要步骤</p>
+
+<ol>
+<li>创建一个Windows Service工程</li>
+<li>在Service的属性页设置ServiceName</li>
+<li>设置其他Service属性页的相关内容，包括CanStop，CanShutdown等</li>
+<li>添加你想要实现的各种功能</li>
+<li>为你的Service应用添加必要的安装程序</li>
+<li>Build your project by selecting Build Solution from the Build menu</li>
+<li>安装这个服务程序</li>
+</ol>
+
+
+<p>注意事项
+1.服务程序中不能使用定时器控件</p>
+
+<p>参考文献</p>
+
+<p>1.<a href="http://msdn.microsoft.com/en-us/library/9k985bc9.aspx">http://msdn.microsoft.com/en-us/library/9k985bc9.aspx</a>
+2.<a href="http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx">http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[hello world]]></title>
