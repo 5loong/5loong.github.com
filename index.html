@@ -9,10 +9,9 @@
   <meta name="author" content="卧龙茗舌">
 
   
-  <meta name="description" content="PS.这是个草稿，时间太晚了，改天再完善。 简要步骤 创建一个Windows Service工程
-在Service的属性页设置ServiceName
-设置其他Service属性页的相关内容，包括CanStop，CanShutdown等
-添加你想要实现的各种功能 &hellip;">
+  <meta name="description" content="有个程序使用excel做数据库,但是读写速度太慢了,无法满足需求,最后选择使用Sqlite这种轻型数据库作为
+程序的数据库,在程序启动时将Excel中的数据导入Sqlite中,在程序运行中使用Sqlite的数据库进行临时
+的数据读写和存储.这篇文章将记录我的Sqlite学习过程, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +73,62 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/09/using-sqlite-in-c-sharp/">在C#中使用Sqlite</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-09T22:19:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2013</time>
+        
+        
+         | <a href="/blog/2013/10/09/using-sqlite-in-c-sharp/#duoshuo_thread">评论</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>有个程序使用excel做数据库,但是读写速度太慢了,无法满足需求,最后选择使用Sqlite这种轻型数据库作为
+程序的数据库,在程序启动时将Excel中的数据导入Sqlite中,在程序运行中使用Sqlite的数据库进行临时
+的数据读写和存储.这篇文章将记录我的Sqlite学习过程,可能会有一系列的文章.</p>
+
+<hr />
+
+<h3>一. System.Data.SQLite的安装</h3>
+
+<p>System.Data.SQLite是SQLite官方提供的C#支持,对各种版本的VS进行支持,下载页面为:</p>
+
+<p><a href="http://system.data.sqlite.org/index.html/doc/trunk/www/downloads.wiki">点击进入下载页面</a></p>
+
+<p>请下载对应的版本进行安装,安装过程非常简单,一路 NEXT 即可. 但是,在我安装好之后,VS2010的添加数据源中并没有SQLite,
+不知道为什么,有空再继续研究.</p>
+
+<p><img src="http://godloong.duapp.com/images/sqlite_setup.png" alt="SQLite安装" /></p>
+
+<p>附上我的不成功截图~~</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -185,6 +240,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="最新文章">
+    
+      <li class="post">
+        <a href="/blog/2013/10/09/using-sqlite-in-c-sharp/">在C#中使用Sqlite</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/10/create-windows-services-with-c-sharp/">使用C#创建Windows Services程序</a>

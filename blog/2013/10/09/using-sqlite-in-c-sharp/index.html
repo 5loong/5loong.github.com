@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>卧龙云点播 - 神龙</title>
+  <title>在C#中使用Sqlite - 神龙</title>
   <meta name="author" content="卧龙茗舌">
 
   
-  <meta name="description" content="卧龙云点播 Sep 3rd, 2013 下载速度慢，好想边下边看&hellip;&hellip; 没钱买迅雷会员，怎么用云点播&hellip;&hellip; 卧龙云点播是一个绿色免费的云点播软件，想播就播，想看就看！ 下载地址 PS. 程序需要.net 4.0支持，请从微软官方网站下载安装， &hellip;">
+  <meta name="description" content="有个程序使用excel做数据库,但是读写速度太慢了,无法满足需求,最后选择使用Sqlite这种轻型数据库作为
+程序的数据库,在程序启动时将Excel中的数据导入Sqlite中,在程序运行中使用Sqlite的数据库进行临时
+的数据读写和存储.这篇文章将记录我的Sqlite学习过程, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://godloong.com/5loongyun.html">
+  <link rel="canonical" href="http://godloong.com/blog/2013/10/09/using-sqlite-in-c-sharp">
   <link href="http://godloong.duapp.com/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="神龙" type="application/atom+xml">
@@ -70,46 +72,15 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">卧龙云点播</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-03T23:24:00+08:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time></p>
-  </header>
-  
-  <blockquote><p>下载速度慢，好想边下边看&hellip;&hellip;</p>
-
-<p>没钱买迅雷会员，怎么用云点播&hellip;&hellip;</p>
-
-<p>卧龙云点播是一个绿色免费的云点播软件，想播就播，想看就看！</p></blockquote>
-
-<p><img src="http://godloong.duapp.com/images/5loongyun1.jpg" alt="卧龙云点播" /></p>
-
-<p><img src="http://godloong.duapp.com/images/5loongyun2.jpg" alt="卧龙云点播" /></p>
-
-<p><a href="http://pan.baidu.com/share/link?shareid=897954333&amp;uk=1124179010">下载地址</a></p>
-
-<p>PS. 程序需要.net 4.0支持，请从微软官方网站下载安装，以免受到不必要的损失!</p>
-
-<p><a href="http://www.microsoft.com/zh-cn/download/details.aspx?id=17718">点此从微软官方下载</a></p>
-
-  
-    <footer>
+    
+      <h1 class="entry-title">在C#中使用Sqlite</h1>
+    
+    
       <p class="meta">
         
-        
 
 
 
@@ -121,13 +92,98 @@
   
 
 
-<time datetime="2013-09-03T23:24:00+08:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+<time datetime="2013-10-09T22:19:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2013</time>
+        
+        
+         | <a href="#duoshuo_thread">评论</a>
         
       </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>有个程序使用excel做数据库,但是读写速度太慢了,无法满足需求,最后选择使用Sqlite这种轻型数据库作为
+程序的数据库,在程序启动时将Excel中的数据导入Sqlite中,在程序运行中使用Sqlite的数据库进行临时
+的数据读写和存储.这篇文章将记录我的Sqlite学习过程,可能会有一系列的文章.</p>
+
+<hr />
+
+<h3>一. System.Data.SQLite的安装</h3>
+
+<p>System.Data.SQLite是SQLite官方提供的C#支持,对各种版本的VS进行支持,下载页面为:</p>
+
+<p><a href="http://system.data.sqlite.org/index.html/doc/trunk/www/downloads.wiki">点击进入下载页面</a></p>
+
+<p>请下载对应的版本进行安装,安装过程非常简单,一路 NEXT 即可. 但是,在我安装好之后,VS2010的添加数据源中并没有SQLite,
+不知道为什么,有空再继续研究.</p>
+
+<p><img src="http://godloong.duapp.com/images/sqlite_setup.png" alt="SQLite安装" /></p>
+
+<p>附上我的不成功截图~~</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-    </footer>
   
+
+<span class="byline author vcard">Posted by <span class="fn">卧龙茗舌</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-09T22:19:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/09/10/create-windows-services-with-c-sharp/" title="Previous Post: 使用C#创建Windows Services程序">&laquo; 使用C#创建Windows Services程序</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+
+  <section>
+    <h1>评论</h1>
+    <div id="duoshuo_thread" aria-live="polite">
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"5loong"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+</div>
+  </section>
 
 </div>
 
