@@ -4,7 +4,7 @@
   <title><![CDATA[神龙]]></title>
   <link href="http://godloong.com/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2013-10-09T22:54:50+08:00</updated>
+  <updated>2013-10-09T22:57:14+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -46,7 +46,7 @@
     <id>http://godloong.com/blog/2013/09/10/create-windows-services-with-c-sharp</id>
     <content type="html"><![CDATA[<p>PS.这是个草稿，时间太晚了，改天再完善。</p>
 
-<p>简要步骤</p>
+<h3>简要步骤</h3>
 
 <ol>
 <li>创建一个Windows Service工程</li>
@@ -59,13 +59,15 @@
 </ol>
 
 
-<p>注意事项
-1.服务程序中不能使用定时器控件</p>
+<h3>注意事项</h3>
 
-<p>参考文献</p>
+<p>1.服务程序中不能使用定时器控件</p>
 
-<p>1.<a href="http://msdn.microsoft.com/en-us/library/9k985bc9.aspx">http://msdn.microsoft.com/en-us/library/9k985bc9.aspx</a>
-2.<a href="http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx">http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx</a></p>
+<h3>参考文献</h3>
+
+<p>1.<a href="http://msdn.microsoft.com/en-us/library/9k985bc9.aspx">http://msdn.microsoft.com/en-us/library/9k985bc9.aspx</a></p>
+
+<p>2.<a href="http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx">http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx</a></p>
 ]]></content>
   </entry>
   
