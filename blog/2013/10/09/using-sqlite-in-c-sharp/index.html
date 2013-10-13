@@ -117,9 +117,56 @@
 <p>请下载对应的版本进行安装,安装过程非常简单,一路 NEXT 即可. 但是,在我安装好之后,VS2010的添加数据源中并没有SQLite,
 不知道为什么,有空再继续研究.</p>
 
-<p><img src="http://godloong.duapp.com/images/sqlite_setup.png" alt="SQLite安装" /></p>
+<p><img src="http://godloong.duapp.com/images/post/sqlite_setup.png" alt="SQLite安装" /></p>
 
 <p>附上我的不成功截图~~</p>
+
+<blockquote><p><strong>解决方案:</strong>   <br/>
+安装&#8221;Setups for 32-bit Windows (.NET Framework 4.0)&ldquo;,就算是64位的windows也要安装32位的,安装过程中有一项是可以添加VS2010插件的.</p></blockquote>
+
+<p><img src="http://godloong.duapp.com/images/post/VS2010_SQlite.JPG" alt="VS2010中的SQlite数据源" /></p>
+
+<h3>二. System.Data.SQLite的使用</h3>
+
+<ol>
+<li>添加引用System.Data.SQLite.DLL(在.NET选项卡中)</li>
+<li>&ldquo;using System.Data.SQLite;&rdquo;</li>
+<li><p>具体的使用过程直接上代码</p>
+
+<p> &#8220;`//Create a new database file
+ string datasource = AppPath + &ldquo;test.db&rdquo;;
+ SQLiteConnection.CreateFile(datasource);</p>
+
+<p> //Connect to the database
+ SQLiteConnection conn = new SQLiteConnection();
+ SQLiteConnectionStringBuilder connstr = new SQLiteConnectionStringBuilder();
+ connstr.DataSource = datasource;
+ connstr.Password = &ldquo;5loong&rdquo;;  //Set database password
+ conn.ConnectionString = connstr.ToString();
+ conn.Open();</p>
+
+<p> //Create new table in the database
+ SQLiteCommand cmd = new SQLiteCommand();
+ cmd.CommandText = &ldquo;CREATE TABLE test(username varchar(20),password varchar(20))&rdquo;;
+ cmd.Connection = conn;
+ cmd.ExecuteNonQuery();</p>
+
+<p> //Insert data
+ cmd.CommandText = &ldquo;INSERT INTO test VALUES(&lsquo;5loong&rsquo;,&lsquo;godloong.com&rsquo;)&rdquo;;
+ cmd.ExecuteNonQuery();</p>
+
+<p> //Pull out data
+ cmd.CommandText = &ldquo;SELECT * FROM test&rdquo;;
+ SQLiteDataReader reader = cmd.ExecuteReader();
+ string tmp = &ldquo;&rdquo;;
+ while (reader.Read())
+ {
+     tmp = &ldquo;username:&rdquo; + reader.GetString(0) + &ldquo;&mdash;&mdash;&ndash;&rdquo; + &ldquo;password:&rdquo; + reader.GetString(1) + &ldquo;\r\n&rdquo;;
+ }
+ MessageBox.Show(tmp);
+&#8220;`</p></li>
+</ol>
+
 </div>
 
 
