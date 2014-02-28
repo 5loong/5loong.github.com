@@ -5,12 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>hello world - 神龙</title>
+  <title>使用C#创建Windows Services程序 - 神龙</title>
   <meta name="author" content="卧龙茗舌">
 
   
-  <meta name="description" content="This is my first post in GITHUB.
-">
+  <meta name="description" content="PS.这是个草稿，时间太晚了，改天再完善。 简要步骤 创建一个Windows Service工程
+在Service的属性页设置ServiceName
+设置其他Service属性页的相关内容，包括CanStop，CanShutdown等
+添加你想要实现的各种功能 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://godloong.com/blog/2013/09/01/hello-world">
+  <link rel="canonical" href="http://godloong.com/2013/09/10/create-windows-services-with-c-sharp">
   <link href="http://godloong.duapp.com/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="神龙" type="application/atom+xml">
@@ -74,7 +76,7 @@
   
   <header>
     
-      <h1 class="entry-title">Hello World</h1>
+      <h1 class="entry-title">使用C#创建Windows Services程序</h1>
     
     
       <p class="meta">
@@ -90,7 +92,7 @@
   
 
 
-<time datetime="2013-09-01T22:56:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2013</time>
+<time datetime="2013-09-10T00:14:00+08:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time>
         
         
          | <a href="#duoshuo_thread">评论</a>
@@ -100,7 +102,30 @@
   </header>
 
 
-<div class="entry-content"><p>This is my first post in GITHUB.</p>
+<div class="entry-content"><p>PS.这是个草稿，时间太晚了，改天再完善。</p>
+
+<h3>简要步骤</h3>
+
+<ol>
+<li>创建一个Windows Service工程</li>
+<li>在Service的属性页设置ServiceName</li>
+<li>设置其他Service属性页的相关内容，包括CanStop，CanShutdown等</li>
+<li>添加你想要实现的各种功能</li>
+<li>为你的Service应用添加必要的安装程序</li>
+<li>Build your project by selecting Build Solution from the Build menu</li>
+<li>安装这个服务程序</li>
+</ol>
+
+
+<h3>注意事项</h3>
+
+<p>1.服务程序中不能使用定时器控件</p>
+
+<h3>参考文献</h3>
+
+<p>1.<a href="http://msdn.microsoft.com/en-us/library/9k985bc9.aspx">http://msdn.microsoft.com/en-us/library/9k985bc9.aspx</a></p>
+
+<p>2.<a href="http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx">http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx</a></p>
 </div>
 
 
@@ -123,7 +148,7 @@
   
 
 
-<time datetime="2013-09-01T22:56:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2013</time>
+<time datetime="2013-09-10T00:14:00+08:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time>
       
 
 
@@ -138,8 +163,10 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/2013/09/01/hello-world/" title="Previous Post: hello world">&laquo; hello world</a>
       
-        <a class="basic-alignment right" href="/blog/2013/09/10/create-windows-services-with-c-sharp/" title="Next Post: 使用C#创建Windows Services程序">使用C#创建Windows Services程序 &raquo;</a>
+      
+        <a class="basic-alignment right" href="/2013/10/09/using-sqlite-in-c-sharp/" title="Next Post: 在C#中使用Sqlite">在C#中使用Sqlite &raquo;</a>
       
     </p>
   </footer>
@@ -175,19 +202,19 @@ var duoshuoQuery = {short_name:"5loong"};
   <ul id="最新文章">
     
       <li class="post">
-        <a href="/blog/2014/02/28/everything-startup-win7/">Everything随WIN7开机启动</a>
+        <a href="/2014/02/28/everything-startup-win7/">Everything随WIN7开机启动</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/10/09/using-sqlite-in-c-sharp/">在C#中使用Sqlite</a>
+        <a href="/2013/10/09/using-sqlite-in-c-sharp/">在C#中使用Sqlite</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/09/10/create-windows-services-with-c-sharp/">使用C#创建Windows Services程序</a>
+        <a href="/2013/09/10/create-windows-services-with-c-sharp/">使用C#创建Windows Services程序</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/09/01/hello-world/">Hello World</a>
+        <a href="/2013/09/01/hello-world/">Hello World</a>
       </li>
     
   </ul>

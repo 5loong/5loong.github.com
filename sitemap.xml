@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://godloong.com/blog/2013/09/01/hello-world/</loc>
+        <loc>http://godloong.com/2013/09/01/hello-world/</loc>
         <lastmod>2013-09-07T15:09:15+08:00</lastmod>
     </url>
     <url>
-        <loc>http://godloong.com/blog/2013/09/10/create-windows-services-with-c-sharp/</loc>
+        <loc>http://godloong.com/2013/09/10/create-windows-services-with-c-sharp/</loc>
         <lastmod>2013-10-09T22:57:02+08:00</lastmod>
     </url>
     <url>
-        <loc>http://godloong.com/blog/2013/10/09/using-sqlite-in-c-sharp/</loc>
+        <loc>http://godloong.com/2013/10/09/using-sqlite-in-c-sharp/</loc>
         <lastmod>2013-10-13T16:29:14+08:00</lastmod>
     </url>
     <url>
-        <loc>http://godloong.com/blog/2014/02/28/everything-startup-win7/</loc>
+        <loc>http://godloong.com/2014/02/28/everything-startup-win7/</loc>
         <lastmod>2014-02-28T22:24:10+08:00</lastmod>
     </url>
     <url>
