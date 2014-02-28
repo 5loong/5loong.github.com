@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>使用C#创建Windows Services程序 - 神龙</title>
+  <title>Everything随WIN7开机启动 - 神龙</title>
   <meta name="author" content="卧龙茗舌">
 
   
-  <meta name="description" content="PS.这是个草稿，时间太晚了，改天再完善。 简要步骤 创建一个Windows Service工程
-在Service的属性页设置ServiceName
-设置其他Service属性页的相关内容，包括CanStop，CanShutdown等
-添加你想要实现的各种功能 &hellip;">
+  <meta name="description" content="虽说Win7自带的搜索很强大,但是在搜索文件方面与神器Everything相比还相差太远,但是由于Win7的UAC让神器无法随系统启动.
+这显然让我这个随手乱丢东西的人非常的头疼,于是乎,就有这个文章,让Everything随Win7开机启动. 一 打开&#8221;任务计划&#8221;, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://godloong.com/blog/2013/09/10/create-windows-services-with-c-sharp">
+  <link rel="canonical" href="http://godloong.com/blog/2014/02/28/everything-startup-win7">
   <link href="http://godloong.duapp.com/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="神龙" type="application/atom+xml">
@@ -78,7 +76,7 @@
   
   <header>
     
-      <h1 class="entry-title">使用C#创建Windows Services程序</h1>
+      <h1 class="entry-title">Everything随WIN7开机启动</h1>
     
     
       <p class="meta">
@@ -94,7 +92,7 @@
   
 
 
-<time datetime="2013-09-10T00:14:00+08:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time>
+<time datetime="2014-02-28T22:13:00+08:00" pubdate data-updated="true">Feb 28<span>th</span>, 2014</time>
         
         
          | <a href="#duoshuo_thread">评论</a>
@@ -104,30 +102,24 @@
   </header>
 
 
-<div class="entry-content"><p>PS.这是个草稿，时间太晚了，改天再完善。</p>
+<div class="entry-content"><p>虽说Win7自带的搜索很强大,但是在搜索文件方面与神器Everything相比还相差太远,但是由于Win7的UAC让神器无法随系统启动.
+这显然让我这个随手乱丢东西的人非常的头疼,于是乎,就有这个文章,让Everything随Win7开机启动.</p>
 
-<h3>简要步骤</h3>
+<hr />
 
-<ol>
-<li>创建一个Windows Service工程</li>
-<li>在Service的属性页设置ServiceName</li>
-<li>设置其他Service属性页的相关内容，包括CanStop，CanShutdown等</li>
-<li>添加你想要实现的各种功能</li>
-<li>为你的Service应用添加必要的安装程序</li>
-<li>Build your project by selecting Build Solution from the Build menu</li>
-<li>安装这个服务程序</li>
-</ol>
+<p>一 打开&#8221;任务计划&#8221;,借助强大的任务计划可以绕过坑爹的UAC,操作步骤如下(直接看图):</p>
 
+<p><img src="http://godloong.duapp.com/images/img/everything1.png" alt="Everything随WIN7开机启动" /></p>
 
-<h3>注意事项</h3>
+<p><img src="http://godloong.duapp.com/images/img/everything2.png" alt="Everything随WIN7开机启动" /></p>
 
-<p>1.服务程序中不能使用定时器控件</p>
+<p><img src="http://godloong.duapp.com/images/img/everything3.png" alt="Everything随WIN7开机启动" /></p>
 
-<h3>参考文献</h3>
+<p><img src="http://godloong.duapp.com/images/img/everything4.png" alt="Everything随WIN7开机启动" /></p>
 
-<p>1.<a href="http://msdn.microsoft.com/en-us/library/9k985bc9.aspx">http://msdn.microsoft.com/en-us/library/9k985bc9.aspx</a></p>
+<p>二 找到everything的应用程序,设置为管理员权限</p>
 
-<p>2.<a href="http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx">http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx</a></p>
+<p>三 <strong>将everything自身的开机启动取消,切记!切记!</strong></p>
 </div>
 
 
@@ -150,7 +142,7 @@
   
 
 
-<time datetime="2013-09-10T00:14:00+08:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time>
+<time datetime="2014-02-28T22:13:00+08:00" pubdate data-updated="true">Feb 28<span>th</span>, 2014</time>
       
 
 
@@ -165,10 +157,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/01/hello-world/" title="Previous Post: hello world">&laquo; hello world</a>
+        <a class="basic-alignment left" href="/blog/2013/10/09/using-sqlite-in-c-sharp/" title="Previous Post: 在C#中使用Sqlite">&laquo; 在C#中使用Sqlite</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/10/09/using-sqlite-in-c-sharp/" title="Next Post: 在C#中使用Sqlite">在C#中使用Sqlite &raquo;</a>
       
     </p>
   </footer>
