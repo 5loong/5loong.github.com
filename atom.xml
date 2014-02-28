@@ -4,7 +4,7 @@
   <title><![CDATA[神龙]]></title>
   <link href="http://godloong.com/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2014-02-28T23:50:44+08:00</updated>
+  <updated>2014-02-28T23:55:28+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Everything随WIN7开机启动]]></title>
-    <link href="http://godloong.com/2014/02/28/everything-startup-win7/"/>
+    <link href="http://godloong.com/everything-startup-win7/"/>
     <updated>2014-02-28T22:13:00+08:00</updated>
-    <id>http://godloong.com/2014/02/28/everything-startup-win7</id>
+    <id>http://godloong.com/everything-startup-win7</id>
     <content type="html"><![CDATA[<p>虽说Win7自带的搜索很强大,但是在搜索文件方面与神器Everything相比还相差太远,但是由于Win7的UAC让神器无法随系统启动.
 这显然让我这个随手乱丢东西的人非常的头疼,于是乎,就有这个文章,让Everything随Win7开机启动.</p>
 
@@ -41,9 +41,9 @@
   
   <entry>
     <title type="html"><![CDATA[在C#中使用Sqlite]]></title>
-    <link href="http://godloong.com/2013/10/09/using-sqlite-in-c-sharp/"/>
+    <link href="http://godloong.com/using-sqlite-in-c-sharp/"/>
     <updated>2013-10-09T22:19:00+08:00</updated>
-    <id>http://godloong.com/2013/10/09/using-sqlite-in-c-sharp</id>
+    <id>http://godloong.com/using-sqlite-in-c-sharp</id>
     <content type="html"><![CDATA[<p>有个程序使用excel做数据库,但是读写速度太慢了,无法满足需求,最后选择使用Sqlite这种轻型数据库作为
 程序的数据库,在程序启动时将Excel中的数据导入Sqlite中,在程序运行中使用Sqlite的数据库进行临时
 的数据读写和存储.这篇文章将记录我的Sqlite学习过程,可能会有一系列的文章.</p>
@@ -59,14 +59,14 @@
 <p>请下载对应的版本进行安装,安装过程非常简单,一路 NEXT 即可. 但是,在我安装好之后,VS2010的添加数据源中并没有SQLite,
 不知道为什么,有空再继续研究.</p>
 
-<p><img src="http://godloong.duapp.com/images/sqlite_setup.png" alt="SQLite安装" /></p>
+<p><img src="http://godloong.duapp.com/images/img/sqlite_setup.png" alt="SQLite安装" /></p>
 
 <p>附上我的不成功截图~~</p>
 
 <blockquote><p><strong>解决方案:</strong>   <br/>
 安装&#8221;Setups for 32-bit Windows (.NET Framework 4.0)&ldquo;,就算是64位的windows也要安装32位的,安装过程中有一项是可以添加VS2010插件的.</p></blockquote>
 
-<p><img src="http://godloong.duapp.com/images/VS2010_SQlite.JPG" alt="VS2010中的SQlite数据源" /></p>
+<p><img src="http://godloong.duapp.com/images/img/VS2010_SQlite.JPG" alt="VS2010中的SQlite数据源" /></p>
 
 <h3>二. System.Data.SQLite的使用</h3>
 
@@ -147,9 +147,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用C#创建Windows Services程序]]></title>
-    <link href="http://godloong.com/2013/09/10/create-windows-services-with-c-sharp/"/>
+    <link href="http://godloong.com/create-windows-services-with-c-sharp/"/>
     <updated>2013-09-10T00:14:00+08:00</updated>
-    <id>http://godloong.com/2013/09/10/create-windows-services-with-c-sharp</id>
+    <id>http://godloong.com/create-windows-services-with-c-sharp</id>
     <content type="html"><![CDATA[<p>PS.这是个草稿，时间太晚了，改天再完善。</p>
 
 <h3>简要步骤</h3>
@@ -179,9 +179,9 @@
   
   <entry>
     <title type="html"><![CDATA[hello world]]></title>
-    <link href="http://godloong.com/2013/09/01/hello-world/"/>
+    <link href="http://godloong.com/hello-world/"/>
     <updated>2013-09-01T22:56:00+08:00</updated>
-    <id>http://godloong.com/2013/09/01/hello-world</id>
+    <id>http://godloong.com/hello-world</id>
     <content type="html"><![CDATA[<p>This is my first post in GITHUB.</p>
 ]]></content>
   </entry>
