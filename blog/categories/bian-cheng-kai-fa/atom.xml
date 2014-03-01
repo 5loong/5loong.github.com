@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 编程开发 | 神龙]]></title>
+  <link href="http://godloong.com/blog/categories/bian-cheng-kai-fa/atom.xml" rel="self"/>
+  <link href="http://godloong.com/"/>
+  <updated>2014-03-01T23:09:31+08:00</updated>
+  <id>http://godloong.com/</id>
+  <author>
+    <name><![CDATA[卧龙茗舌]]></name>
+    <email><![CDATA[godloong.com@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在C#中使用Sqlite]]></title>
+    <link href="http://godloong.com/using-sqlite-in-c-sharp"/>
+    <updated>2013-10-09T22:19:00+08:00</updated>
+    <id>http://godloong.com/using-sqlite-in-c-sharp</id>
+    <content type="html"><![CDATA[<p>有个程序使用excel做数据库,但是读写速度太慢了,无法满足需求,最后选择使用Sqlite这种轻型数据库作为
+程序的数据库,在程序启动时将Excel中的数据导入Sqlite中,在程序运行中使用Sqlite的数据库进行临时
+的数据读写和存储.这篇文章将记录我的Sqlite学习过程,可能会有一系列的文章.</p>
+
+<hr />
+
+<!--more-->
+
+
+<h3>一. System.Data.SQLite的安装</h3>
+
+<p>System.Data.SQLite是SQLite官方提供的C#支持,对各种版本的VS进行支持,下载页面为:</p>
+
+<p><a href="http://system.data.sqlite.org/index.html/doc/trunk/www/downloads.wiki">点击进入下载页面</a></p>
+
+<p>请下载对应的版本进行安装,安装过程非常简单,一路 NEXT 即可. 但是,在我安装好之后,VS2010的添加数据源中并没有SQLite,
+不知道为什么,有空再继续研究.</p>
+
+<p><img src="http://godloong.duapp.com/images/img/sqlite_setup.png" alt="SQLite安装" /></p>
+
+<p>附上我的不成功截图~~</p>
+
+<blockquote><p><strong>解决方案:</strong>   <br/>
+安装"Setups for 32-bit Windows (.NET Framework 4.0)&ldquo;,就算是64位的windows也要安装32位的,安装过程中有一项是可以添加VS2010插件的.</p></blockquote>
+
+<p><img src="http://godloong.duapp.com/images/img/VS2010_SQlite.JPG" alt="VS2010中的SQlite数据源" /></p>
+
+<h3>二. System.Data.SQLite的使用</h3>
+
+<ol>
+<li>添加引用System.Data.SQLite.DLL(在.NET选项卡中)</li>
+<li>&ldquo;using System.Data.SQLite;&rdquo;</li>
+<li>具体的使用过程直接上代码</li>
+</ol>
+
+
+<p>```</p>
+
+<pre><code>//Create a new database file
+string datasource = AppPath + "test.db";
+SQLiteConnection.CreateFile(datasource);
+
+//Connect to the database
+SQLiteConnection conn = new SQLiteConnection();
+SQLiteConnectionStringBuilder connstr = new SQLiteConnectionStringBuilder();
+connstr.DataSource = datasource;
+connstr.Password = "5loong";  //Set database password
+conn.ConnectionString = connstr.ToString();
+conn.Open();
+
+//Create new table in the database
+SQLiteCommand cmd = new SQLiteCommand();
+cmd.CommandText = "CREATE TABLE test(username varchar(20),password varchar(20))";
+cmd.Connection = conn;
+cmd.ExecuteNonQuery();
+
+//Insert data
+cmd.CommandText = "INSERT INTO test VALUES('5loong','godloong.com')";
+cmd.ExecuteNonQuery();
+
+//Pull out data
+cmd.CommandText = "SELECT * FROM test";
+SQLiteDataReader reader = cmd.ExecuteReader();
+string tmp = "";
+while (reader.Read())
+{
+    tmp = "username:" + reader.GetString(0) + "-----" + "password:" + reader.GetString(1) + "\r\n";
+}
+MessageBox.Show(tmp);
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用C#创建Windows Services程序]]></title>
+    <link href="http://godloong.com/create-windows-services-with-c-sharp"/>
+    <updated>2013-09-10T00:14:00+08:00</updated>
+    <id>http://godloong.com/create-windows-services-with-c-sharp</id>
+    <content type="html"><![CDATA[<p>PS.这是个草稿，时间太晚了，改天再完善。</p>
+
+<h3>简要步骤</h3>
+
+<ol>
+<li>创建一个Windows Service工程</li>
+<li>在Service的属性页设置ServiceName</li>
+<li>设置其他Service属性页的相关内容，包括CanStop，CanShutdown等</li>
+<li>添加你想要实现的各种功能</li>
+<li>为你的Service应用添加必要的安装程序</li>
+<li>Build your project by selecting Build Solution from the Build menu</li>
+<li>安装这个服务程序</li>
+</ol>
+
+
+<!--more-->
+
+
+<h3>注意事项</h3>
+
+<p>1.服务程序中不能使用定时器控件</p>
+
+<h3>参考文献</h3>
+
+<p>1.<a href="http://msdn.microsoft.com/en-us/library/9k985bc9.aspx">http://msdn.microsoft.com/en-us/library/9k985bc9.aspx</a></p>
+
+<p>2.<a href="http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx">http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx</a></p>
+]]></content>
+  </entry>
+  
+</feed>

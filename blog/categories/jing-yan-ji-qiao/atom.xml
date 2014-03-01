@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 经验技巧 | 神龙]]></title>
+  <link href="http://godloong.com/blog/categories/jing-yan-ji-qiao/atom.xml" rel="self"/>
+  <link href="http://godloong.com/"/>
+  <updated>2014-03-01T23:09:31+08:00</updated>
+  <id>http://godloong.com/</id>
+  <author>
+    <name><![CDATA[卧龙茗舌]]></name>
+    <email><![CDATA[godloong.com@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Everything随WIN7开机启动]]></title>
+    <link href="http://godloong.com/everything-startup-win7"/>
+    <updated>2014-02-28T22:13:00+08:00</updated>
+    <id>http://godloong.com/everything-startup-win7</id>
+    <content type="html"><![CDATA[<p>虽说Win7自带的搜索很强大,但是在搜索文件方面与神器Everything相比还相差太远,但是由于Win7的UAC让神器无法随系统启动.
+这显然让我这个随手乱丢东西的人非常的头疼,于是乎,就有这个文章,让Everything随Win7开机启动.</p>
+
+<hr />
+
+<!--more-->
+
+
+<p>一 打开"任务计划",借助强大的任务计划可以绕过坑爹的UAC,操作步骤如下(直接看图):</p>
+
+<p><img src="http://godloong.duapp.com/images/img/everything1.png" alt="Everything随WIN7开机启动" /></p>
+
+<p><img src="http://godloong.duapp.com/images/img/everything2.png" alt="Everything随WIN7开机启动" /></p>
+
+<p><img src="http://godloong.duapp.com/images/img/everything3.png" alt="Everything随WIN7开机启动" /></p>
+
+<p><img src="http://godloong.duapp.com/images/img/everything4.png" alt="Everything随WIN7开机启动" /></p>
+
+<p>二 找到everything的应用程序,设置为管理员权限</p>
+
+<p>三 <strong>将everything自身的开机启动取消,切记!切记!</strong></p>
+]]></content>
+  </entry>
+  
+</feed>

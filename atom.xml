@@ -4,7 +4,7 @@
   <title><![CDATA[神龙]]></title>
   <link href="http://godloong.com/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2014-02-28T23:55:28+08:00</updated>
+  <updated>2014-03-01T23:09:31+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -15,13 +15,16 @@
   
   <entry>
     <title type="html"><![CDATA[Everything随WIN7开机启动]]></title>
-    <link href="http://godloong.com/everything-startup-win7/"/>
+    <link href="http://godloong.com/everything-startup-win7"/>
     <updated>2014-02-28T22:13:00+08:00</updated>
     <id>http://godloong.com/everything-startup-win7</id>
     <content type="html"><![CDATA[<p>虽说Win7自带的搜索很强大,但是在搜索文件方面与神器Everything相比还相差太远,但是由于Win7的UAC让神器无法随系统启动.
 这显然让我这个随手乱丢东西的人非常的头疼,于是乎,就有这个文章,让Everything随Win7开机启动.</p>
 
 <hr />
+
+<!--more-->
+
 
 <p>一 打开&#8221;任务计划&#8221;,借助强大的任务计划可以绕过坑爹的UAC,操作步骤如下(直接看图):</p>
 
@@ -35,13 +38,16 @@
 
 <p>二 找到everything的应用程序,设置为管理员权限</p>
 
-<p>三 <strong>将everything自身的开机启动取消,切记!切记!</strong></p>
+<p>三 <strong>将everything自身的开机启动取消,切记!切记!</strong><p class='post-footer'>
+Original Link:<a href='http://godloong.com/everything-startup-win7'><a href="http://godloong.com/everything-startup-win7">http://godloong.com/everything-startup-win7</a></a><br/>Written by <a href='http://godloong.com'>卧龙茗舌</a>&nbsp;Posted at <a href='http://godloong.com'><a href="http://godloong.com">http://godloong.com</a></a></p>
+
+<p></p></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[在C#中使用Sqlite]]></title>
-    <link href="http://godloong.com/using-sqlite-in-c-sharp/"/>
+    <link href="http://godloong.com/using-sqlite-in-c-sharp"/>
     <updated>2013-10-09T22:19:00+08:00</updated>
     <id>http://godloong.com/using-sqlite-in-c-sharp</id>
     <content type="html"><![CDATA[<p>有个程序使用excel做数据库,但是读写速度太慢了,无法满足需求,最后选择使用Sqlite这种轻型数据库作为
@@ -49,6 +55,9 @@
 的数据读写和存储.这篇文章将记录我的Sqlite学习过程,可能会有一系列的文章.</p>
 
 <hr />
+
+<!--more-->
+
 
 <h3>一. System.Data.SQLite的安装</h3>
 
@@ -141,13 +150,18 @@
 </span><span class='line'>MessageBox.Show(tmp);</span></code></pre></td></tr></table></div></figure>
 
 
+<pre><code>&lt;p class='post-footer'&gt;
+</code></pre>
 
+<p>Original Link:<a href='http://godloong.com/using-sqlite-in-c-sharp'><a href="http://godloong.com/using-sqlite-in-c-sharp">http://godloong.com/using-sqlite-in-c-sharp</a></a><br/>Written by <a href='http://godloong.com'>卧龙茗舌</a>&nbsp;Posted at <a href='http://godloong.com'><a href="http://godloong.com">http://godloong.com</a></a></p>
+
+<p></p></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[使用C#创建Windows Services程序]]></title>
-    <link href="http://godloong.com/create-windows-services-with-c-sharp/"/>
+    <link href="http://godloong.com/create-windows-services-with-c-sharp"/>
     <updated>2013-09-10T00:14:00+08:00</updated>
     <id>http://godloong.com/create-windows-services-with-c-sharp</id>
     <content type="html"><![CDATA[<p>PS.这是个草稿，时间太晚了，改天再完善。</p>
@@ -165,6 +179,9 @@
 </ol>
 
 
+<!--more-->
+
+
 <h3>注意事项</h3>
 
 <p>1.服务程序中不能使用定时器控件</p>
@@ -173,16 +190,25 @@
 
 <p>1.<a href="http://msdn.microsoft.com/en-us/library/9k985bc9.aspx">http://msdn.microsoft.com/en-us/library/9k985bc9.aspx</a></p>
 
-<p>2.<a href="http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx">http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx</a></p>
+<p>2.<a href="http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx">http://msdn.microsoft.com/en-us/library/ddhy0byf.aspx</a><p class='post-footer'>
+Original Link:<a href='http://godloong.com/create-windows-services-with-c-sharp'><a href="http://godloong.com/create-windows-services-with-c-sharp">http://godloong.com/create-windows-services-with-c-sharp</a></a><br/>Written by <a href='http://godloong.com'>卧龙茗舌</a>&nbsp;Posted at <a href='http://godloong.com'><a href="http://godloong.com">http://godloong.com</a></a></p>
+
+<p></p></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[hello world]]></title>
-    <link href="http://godloong.com/hello-world/"/>
+    <link href="http://godloong.com/hello-world"/>
     <updated>2013-09-01T22:56:00+08:00</updated>
     <id>http://godloong.com/hello-world</id>
     <content type="html"><![CDATA[<p>This is my first post in GITHUB.</p>
+
+<p class='post-footer'>
+Original Link:<a href='http://godloong.com/hello-world'>http://godloong.com/hello-world</a><br/>Written by <a href='http://godloong.com'>卧龙茗舌</a>&nbsp;Posted at <a href='http://godloong.com'>http://godloong.com</a>
+           
+</p>
+
 ]]></content>
   </entry>
   

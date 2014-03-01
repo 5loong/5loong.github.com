@@ -1,32 +1,36 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://godloong.com/hello-world/</loc>
-        <lastmod>2013-09-07T15:09:15+08:00</lastmod>
+        <loc>http://godloong.com/hello-world</loc>
+        <lastmod>2014-03-01T11:54:17+08:00</lastmod>
     </url>
     <url>
-        <loc>http://godloong.com/create-windows-services-with-c-sharp/</loc>
-        <lastmod>2013-10-09T22:57:02+08:00</lastmod>
+        <loc>http://godloong.com/create-windows-services-with-c-sharp</loc>
+        <lastmod>2014-03-01T11:53:40+08:00</lastmod>
     </url>
     <url>
-        <loc>http://godloong.com/using-sqlite-in-c-sharp/</loc>
-        <lastmod>2014-02-28T23:53:45+08:00</lastmod>
+        <loc>http://godloong.com/using-sqlite-in-c-sharp</loc>
+        <lastmod>2014-03-01T11:53:11+08:00</lastmod>
     </url>
     <url>
-        <loc>http://godloong.com/everything-startup-win7/</loc>
-        <lastmod>2014-02-28T22:24:10+08:00</lastmod>
+        <loc>http://godloong.com/everything-startup-win7</loc>
+        <lastmod>2014-03-01T11:52:42+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://godloong.com/404.html</loc>
+        <lastmod>2014-03-01T22:38:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://godloong.com/5loongyun/</loc>
-        <lastmod>2014-02-28T23:54:39+08:00</lastmod>
+        <lastmod>2014-03-01T22:21:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://godloong.com/blog/archives/</loc>
-        <lastmod>2014-02-28T23:53:45+08:00</lastmod>
+        <lastmod>2014-03-01T11:54:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://godloong.com/</loc>
-        <lastmod>2014-02-28T23:53:45+08:00</lastmod>
+        <lastmod>2014-03-01T11:54:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://godloong.com/robots.txt</loc>
