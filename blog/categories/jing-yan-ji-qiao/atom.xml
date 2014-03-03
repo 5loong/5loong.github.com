@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 经验技巧 | 神龙]]></title>
   <link href="http://godloong.com/blog/categories/jing-yan-ji-qiao/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2014-03-03T22:25:30+08:00</updated>
+  <updated>2014-03-03T22:29:44+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -27,11 +27,17 @@
 <!--more-->
 
 
-<p>1.打开注册表,别告诉我不会.如果真的不会,请百度,谷歌,必应之;
-2.找到"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"
-3.在Main上右键&mdash;&mdash;&mdash;&ldquo;权限&rdquo;
-4.然后看图
-<img src="http://godloong.duapp.com/images/img/IEnotopen.png" alt="IE打不开的解决方法" /></p>
+<p>1.打开注册表,别告诉我不会.如果真的不会,请百度,谷歌,必应之;</p>
+
+<p>2.找到"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</p>
+
+<p>3.在Main上右键&mdash;&mdash;&mdash;&ldquo;权限&rdquo;</p>
+
+<p>4.然后看图</p>
+
+<p><img src="http://godloong.duapp.com/images/img/IEnotopen.png" alt="IE打不开的解决方法" /></p>
+
+<p>5.最后狂点"确定"</p>
 ]]></content>
   </entry>
   

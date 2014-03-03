@@ -4,7 +4,7 @@
   <title><![CDATA[神龙]]></title>
   <link href="http://godloong.com/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2014-03-03T22:25:30+08:00</updated>
+  <updated>2014-03-03T22:29:44+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -27,17 +27,20 @@
 <!--more-->
 
 
-<p>1.打开注册表,别告诉我不会.如果真的不会,请百度,谷歌,必应之;
-2.找到&#8221;HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main&#8221;
-3.在Main上右键&mdash;&mdash;&mdash;&ldquo;权限&rdquo;
-4.然后看图
-<img src="http://godloong.duapp.com/images/img/IEnotopen.png" alt="IE打不开的解决方法" /></p>
+<p>1.打开注册表,别告诉我不会.如果真的不会,请百度,谷歌,必应之;</p>
 
-<p class='post-footer'>
-Original Link:<a href='http://godloong.com/ie-canot-open'>http://godloong.com/ie-canot-open</a><br/>Written by <a href='http://godloong.com'>卧龙茗舌</a>&nbsp;Posted at <a href='http://godloong.com'>http://godloong.com</a>
-           
-</p>
+<p>2.找到&#8221;HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main&#8221;</p>
 
+<p>3.在Main上右键&mdash;&mdash;&mdash;&ldquo;权限&rdquo;</p>
+
+<p>4.然后看图</p>
+
+<p><img src="http://godloong.duapp.com/images/img/IEnotopen.png" alt="IE打不开的解决方法" /></p>
+
+<p>5.最后狂点&#8221;确定&#8221;<p class='post-footer'>
+Original Link:<a href='http://godloong.com/ie-canot-open'><a href="http://godloong.com/ie-canot-open">http://godloong.com/ie-canot-open</a></a><br/>Written by <a href='http://godloong.com'>卧龙茗舌</a>&nbsp;Posted at <a href='http://godloong.com'><a href="http://godloong.com">http://godloong.com</a></a></p>
+
+<p></p></p>
 ]]></content>
   </entry>
   
