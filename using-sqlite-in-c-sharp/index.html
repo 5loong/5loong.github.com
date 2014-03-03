@@ -21,18 +21,18 @@
 
   
   <link rel="canonical" href="http://godloong.com/using-sqlite-in-c-sharp">
-  <link href="http://godloong.duapp.com/favicon.png" rel="icon">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="神龙" type="application/atom+xml">
-  <script src="//godloong.duapp.com/javascripts/modernizr-2.0.js"></script>
+  <script src="//godloong.cdn.duapp.com/javascripts/modernizr-2.0.js"></script>
   <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-  <script src="//libs.baidu.com/jquery/1.9.1/jquery.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="//godloong.duapp.com/javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="//godloong.duapp.com/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="//libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="//godloong.cdn.duapp.com/javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="//godloong.cdn.duapp.com/javascripts/octopress.js" type="text/javascript"></script>
   
 
-  
-
+  <!-- 
+ -->
 </head>
 
 <body   >
@@ -119,14 +119,14 @@
 <p>请下载对应的版本进行安装,安装过程非常简单,一路 NEXT 即可. 但是,在我安装好之后,VS2010的添加数据源中并没有SQLite,
 不知道为什么,有空再继续研究.</p>
 
-<p><img src="http://godloong.duapp.com/images/img/sqlite_setup.png" alt="SQLite安装" /></p>
+<p><img src="/images/img/sqlite_setup.png" alt="SQLite安装" /></p>
 
 <p>附上我的不成功截图~~</p>
 
 <blockquote><p><strong>解决方案:</strong>   <br/>
 安装&#8221;Setups for 32-bit Windows (.NET Framework 4.0)&ldquo;,就算是64位的windows也要安装32位的,安装过程中有一项是可以添加VS2010插件的.</p></blockquote>
 
-<p><img src="http://godloong.duapp.com/images/img/VS2010_SQlite.JPG" alt="VS2010中的SQlite数据源" /></p>
+<p><img src="/images/img/VS2010_SQlite.JPG" alt="VS2010中的SQlite数据源" /></p>
 
 <h3>二. System.Data.SQLite的使用</h3>
 
@@ -317,33 +317,6 @@ var duoshuoQuery = {short_name:"5loong"};
       </li>
     
   </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: '5loong',
-            count: 5,
-            skip_forks: false,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
