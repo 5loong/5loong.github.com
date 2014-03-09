@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 编程开发 | 神龙]]></title>
   <link href="http://godloong.com/blog/categories/bian-cheng-kai-fa/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2014-03-09T15:37:29+08:00</updated>
+  <updated>2014-03-09T15:40:57+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -27,40 +27,34 @@
 
 <p><strong>NPOI2的主要部件</strong></p>
 
-<blockquote><p>NPOI 2.0有几个DLL构成，他们分别是NPOI.DLL，NPOI.OOXML.DLL, NPOI.OpenXml4Net.dll, NPOI.OpenXmlFormats.dll，其中后三个是2.0新加的库。</p>
+<pre><code>NPOI 2.0有几个DLL构成，他们分别是NPOI.DLL，NPOI.OOXML.DLL, NPOI.OpenXml4Net.dll, NPOI.OpenXmlFormats.dll，其中后三个是2.0新加的库。
 
-<p> NPOI.DLL中包含的模块</p>
+NPOI.DLL中包含的模块
 
-<p> NPOI.Util   基础辅助库<br/>
+NPOI.Util   基础辅助库  
+  NPOI.POIFS   OLE2格式读写库，主要负责处理DocumentInformation 
+  NPOI.DDF   Microsoft Drawing格式读写库   
+  NPOI.SS   Excel 2003和Excel 2007操作库共用的接口库以及公用模块实现，如公式计算库  
+  NPOI.HPSF   OLE2的Summary Information和Document Summary Information属性读写库  
+  NPOI.HSSF   Excel BIFF格式读写库，这是用户用的最多的命名空间  
  
- NPOI.POIFS   OLE2格式读写库，主要负责处理DocumentInformation
-  
- NPOI.DDF   Microsoft Drawing格式读写库   </p>
-
-<p> NPOI.SS   Excel 2003和Excel 2007操作库共用的接口库以及公用模块实现，如公式计算库<br/>
-  
- NPOI.HPSF   OLE2的Summary Information和Document Summary Information属性读写库<br/>
+NPOI.OOXML中包含的模块
+  NPOI.XSSF Excel 2007操作库，大部分对象都实现了NPOI.SS的接口 
+  NPOI.XWPF Word 2007操作库
  
- NPOI.HSSF   Excel BIFF格式读写库，这是用户用的最多的命名空间<br/>
- 
-NPOI.OOXML中包含的模块</p>
-
-<p> NPOI.XSSF Excel 2007操作库，大部分对象都实现了NPOI.SS的接口 </p>
-
-<p> NPOI.XWPF Word 2007操作库
- 
-NPOI.OpenXml4Net.DLL中包含的模块</p>
-
-<p> 只有一个，即NPOI.OpenXml4Net，它是从POI的子项目OpenXml4j移植过来的，其功能类似于NPOI.POIFS，只是它操作的是OOXML格式。这个模块和微软提供的System.Packaging功能是一致的，只是System.Packaging支持.Net 3.0以上，这个支持.NET 2.0。
+NPOI.OpenXml4Net.DLL中包含的模块
+  只有一个，即NPOI.OpenXml4Net，它是从POI的子项目OpenXml4j移植过来的，其功能类似于NPOI.POIFS，只是它操作的是OOXML格式。这个模块和微软提供的System.Packaging功能是一致的，只是System.Packaging支持.Net 3.0以上，这个支持.NET 2.0。
  
 NPOI.OpenXmlFormats.DLL中包含的模块
-  也只有一个，即OpenXmlFormats，它定义了所有OOXML对象和C#对象的映射关系，并协助进行序列化和反序列化，从而使文件读写层和逻辑层分离。</p>
+  也只有一个，即OpenXmlFormats，它定义了所有OOXML对象和C#对象的映射关系，并协助进行序列化和反序列化，从而使文件读写层和逻辑层分离。
 
-<p>引用:<a href="http://tonyqus.sinaapp.com/archives/575">http://tonyqus.sinaapp.com/archives/575</a></p></blockquote>
+引用:http://tonyqus.sinaapp.com/archives/575
+</code></pre>
 
 <p><strong>读取Excel文件</strong></p>
 
-<p>直接上代码,很简单</p>
+<p>直接上代码,很简单
+&lsquo;&rsquo;'</p>
 
 <pre><code>string filepath = string.Empty;
 
@@ -94,6 +88,8 @@ while (true)
     sindex++;
 }
 </code></pre>
+
+<p>&lsquo;&rsquo;'</p>
 
 <p>参考:<a href="http://tonyqus.sinaapp.com/npoi2tutorial">http://tonyqus.sinaapp.com/npoi2tutorial</a></p>
 ]]></content>
