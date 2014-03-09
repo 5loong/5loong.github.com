@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 编程开发 | 神龙]]></title>
   <link href="http://godloong.com/blog/categories/bian-cheng-kai-fa/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2014-03-04T21:50:31+08:00</updated>
+  <updated>2014-03-09T15:37:29+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use NPOI to Operate Excel]]></title>
+    <link href="http://godloong.com/use-npoi-to-operate-excel"/>
+    <updated>2014-03-09T14:31:00+08:00</updated>
+    <id>http://godloong.com/use-npoi-to-operate-excel</id>
+    <content type="html"><![CDATA[<p>NPOI来操作Excel(现在也可以操作Word)非常方便,现在NPOI2已经出了,可以支持office2007以后的版本.</p>
+
+<p>按照官方推荐的方式,试了一下自动识别Excel版本的功能,首先简要介绍一下:</p>
+
+<!--more-->
+
+
+<p><strong>NPOI2的主要部件</strong></p>
+
+<blockquote><p>NPOI 2.0有几个DLL构成，他们分别是NPOI.DLL，NPOI.OOXML.DLL, NPOI.OpenXml4Net.dll, NPOI.OpenXmlFormats.dll，其中后三个是2.0新加的库。</p>
+
+<p> NPOI.DLL中包含的模块</p>
+
+<p> NPOI.Util   基础辅助库<br/>
+ 
+ NPOI.POIFS   OLE2格式读写库，主要负责处理DocumentInformation
+  
+ NPOI.DDF   Microsoft Drawing格式读写库   </p>
+
+<p> NPOI.SS   Excel 2003和Excel 2007操作库共用的接口库以及公用模块实现，如公式计算库<br/>
+  
+ NPOI.HPSF   OLE2的Summary Information和Document Summary Information属性读写库<br/>
+ 
+ NPOI.HSSF   Excel BIFF格式读写库，这是用户用的最多的命名空间<br/>
+ 
+NPOI.OOXML中包含的模块</p>
+
+<p> NPOI.XSSF Excel 2007操作库，大部分对象都实现了NPOI.SS的接口 </p>
+
+<p> NPOI.XWPF Word 2007操作库
+ 
+NPOI.OpenXml4Net.DLL中包含的模块</p>
+
+<p> 只有一个，即NPOI.OpenXml4Net，它是从POI的子项目OpenXml4j移植过来的，其功能类似于NPOI.POIFS，只是它操作的是OOXML格式。这个模块和微软提供的System.Packaging功能是一致的，只是System.Packaging支持.Net 3.0以上，这个支持.NET 2.0。
+ 
+NPOI.OpenXmlFormats.DLL中包含的模块
+  也只有一个，即OpenXmlFormats，它定义了所有OOXML对象和C#对象的映射关系，并协助进行序列化和反序列化，从而使文件读写层和逻辑层分离。</p>
+
+<p>引用:<a href="http://tonyqus.sinaapp.com/archives/575">http://tonyqus.sinaapp.com/archives/575</a></p></blockquote>
+
+<p><strong>读取Excel文件</strong></p>
+
+<p>直接上代码,很简单</p>
+
+<pre><code>string filepath = string.Empty;
+
+if (ofd_excel.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+{
+    filepath = ofd_excel.FileName;
+    tb_filepath.Text = filepath;
+}
+
+FileStream fs = File.OpenRead(filepath);
+IWorkbook workbook = WorkbookFactory.Create(fs);
+
+//show them all
+ISheet sheet = workbook.GetSheet("Sheet1");
+
+int sindex = 3;
+string[] slist = new string[7];
+
+while (true)
+{
+    if (sheet.GetRow(sindex).GetCell(0).ToString().Length &lt; 1)
+        break;
+
+    for (int i = 0; i &lt; 7; i++)
+    {
+        slist[i] = sheet.GetRow(sindex).GetCell(i).ToString();
+    }
+
+    ListViewItem lvi = new ListViewItem(slist);
+    lv_main.Items.Add(lvi);
+    sindex++;
+}
+</code></pre>
+
+<p>参考:<a href="http://tonyqus.sinaapp.com/npoi2tutorial">http://tonyqus.sinaapp.com/npoi2tutorial</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在C#中使用Sqlite]]></title>
