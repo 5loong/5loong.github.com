@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 编程开发 | 神龙]]></title>
   <link href="http://godloong.com/blog/categories/bian-cheng-kai-fa/atom.xml" rel="self"/>
   <link href="http://godloong.com/"/>
-  <updated>2014-03-09T15:42:14+08:00</updated>
+  <updated>2014-03-09T15:45:21+08:00</updated>
   <id>http://godloong.com/</id>
   <author>
     <name><![CDATA[卧龙茗舌]]></name>
@@ -55,7 +55,7 @@ NPOI.OpenXmlFormats.DLL中包含的模块
 
 <p>直接上代码,很简单</p>
 
-<p>&lsquo;&rsquo;'</p>
+<p>```</p>
 
 <pre><code>string filepath = string.Empty;
 
@@ -90,7 +90,7 @@ while (true)
 }
 </code></pre>
 
-<p>&lsquo;&rsquo;'</p>
+<p>```</p>
 
 <p>参考:<a href="http://tonyqus.sinaapp.com/npoi2tutorial">http://tonyqus.sinaapp.com/npoi2tutorial</a></p>
 ]]></content>
