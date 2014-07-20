@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在C#中使用Sqlite数据库 | 神龙</title>
+  <meta name="author" content="卧龙茗舌">
+  
+  <meta name="description" content="卧龙茗舌的博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="在C#中使用Sqlite数据库"/>
+  <meta property="og:site_name" content="神龙"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="神龙" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">神龙</a></h1>
+  <h2><a href="/">卧龙茗舌的博客</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/5loongyun">卧龙云点播</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+    <li> <a href="/sitemap.xml">Sitemap</a> </li>
+    <li> <a href="/atom.xml">RSS</a> </li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-07-21T03:50:55.000Z"><a href="/program/using-sqlite-in-c-sharp/">7月 21 2014</a></time>
+      
+      
+  
+    <h1 class="title">在C#中使用Sqlite数据库</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>有个程序使用excel做数据库,但是读写速度太慢了,无法满足需求,最后选择使用Sqlite这种轻型数据库作为<br>程序的数据库,在程序启动时将Excel中的数据导入Sqlite中,在程序运行中使用Sqlite的数据库进行临时<br>的数据读写和存储.这篇文章将记录我的Sqlite学习过程,可能会有一系列的文章. </p>
+<hr>
+<p><a id="more"></a></p>
+<h3 id="一-_System-Data-SQLite的安装">一. System.Data.SQLite的安装</h3>
+<p>System.Data.SQLite是SQLite官方提供的C#支持,对各种版本的VS进行支持,下载页面为:    </p>
+<p><a href="http://system.data.sqlite.org/index.html/doc/trunk/www/downloads.wiki" target="_blank" rel="external">点击进入下载页面</a> </p>
+<p>请下载对应的版本进行安装,安装过程非常简单,一路 NEXT 即可. 但是,在我安装好之后,VS2010的添加数据源中并没有SQLite,<br>不知道为什么,有空再继续研究.</p>
+<p><img src="/imgs/sqlite_setup.png" alt="SQLite安装"></p>
+<p>附上我的不成功截图~~       </p>
+<blockquote>
+<p><strong>解决方案:</strong><br>安装”Setups for 32-bit Windows (.NET Framework 4.0)”,就算是64位的windows也要安装32位的,安装过程中有一项是可以添加VS2010插件的.</p>
+</blockquote>
+<p><img src="/imgs/VS2010_SQlite.JPG" alt="VS2010中的SQlite数据源"></p>
+<h3 id="二-_System-Data-SQLite的使用">二. System.Data.SQLite的使用</h3>
+<ol>
+<li>添加引用System.Data.SQLite.DLL(在.NET选项卡中)</li>
+<li>“using System.Data.SQLite;”</li>
+<li>具体的使用过程直接上代码</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">	//<span class="operator"><span class="keyword">Create</span> a new <span class="keyword">database</span> file</span></div><div class="line">   string datasource = AppPath + <span class="string">"test.db"</span>;</div><div class="line">   SQLiteConnection.CreateFile(datasource);</div><div class="line"></div><div class="line">   //Connect to the database</div><div class="line">   SQLiteConnection conn = new SQLiteConnection();</div><div class="line">   SQLiteConnectionStringBuilder connstr = new SQLiteConnectionStringBuilder();</div><div class="line">   connstr.DataSource = datasource;</div><div class="line">   connstr.Password = "5loong";  //<span class="operator"><span class="keyword">Set</span> <span class="keyword">database</span> password</span></div><div class="line">   conn.ConnectionString = connstr.ToString();</div><div class="line">   conn.Open();</div><div class="line"></div><div class="line">   //<span class="operator"><span class="keyword">Create</span> new <span class="keyword">table</span> <span class="keyword">in</span> the <span class="keyword">database</span></span></div><div class="line">   SQLiteCommand cmd = new SQLiteCommand();</div><div class="line">   cmd.CommandText = "<span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test(username <span class="keyword">varchar</span>(<span class="number">20</span>),password <span class="keyword">varchar</span>(<span class="number">20</span>))<span class="string">";</span></span></div><div class="line">   cmd.Connection = conn;</div><div class="line">   cmd.ExecuteNonQuery();</div><div class="line"></div><div class="line">   //Insert data</div><div class="line">   cmd.CommandText = "<span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span>(<span class="string">'5loong'</span>,<span class="string">'godloong.com'</span>)<span class="string">";</span></div><div class="line">   cmd.ExecuteNonQuery();</div><div class="line"></div><div class="line">   //Pull out data</div><div class="line">   cmd.CommandText = "<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> test<span class="string">";</span></div><div class="line">   SQLiteDataReader reader = cmd.ExecuteReader();</div><div class="line">   string tmp = "";</div><div class="line">   while (reader.Read())</div><div class="line">   {</div><div class="line">       tmp = "username:<span class="string">" + reader.GetString(0) + "</span>-----<span class="string">" + "</span>password:<span class="string">" + reader.GetString(1) + "</span>\r\n<span class="string">";</span></div><div class="line">   }</div><div class="line">   MessageBox.Show(tmp);</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/program/">Program</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/sqlite/">Sqlite</a>
+  </div>
+
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<section id="comment">
+  <!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"5loong"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- Duoshuo Comment END -->
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:godloong.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/computer/">Computer</a><small>2</small></li>
+  
+    <li><a href="/categories/program/">Program</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/everything/">Everything</a><small>1</small></li>
+  
+    <li><a href="/tags/ie/">IE</a><small>1</small></li>
+  
+    <li><a href="/tags/npoi/">NPOI</a><small>1</small></li>
+  
+    <li><a href="/tags/services/">Services</a><small>1</small></li>
+  
+    <li><a href="/tags/sqlite/">Sqlite</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 卧龙茗舌
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="http://libs.useso.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?c0681983e856dfafbe2c6d1a3f3d5c34";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

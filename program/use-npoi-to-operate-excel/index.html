@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用NPOI操作Excel文件 | 神龙</title>
+  <meta name="author" content="卧龙茗舌">
+  
+  <meta name="description" content="卧龙茗舌的博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="使用NPOI操作Excel文件"/>
+  <meta property="og:site_name" content="神龙"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="神龙" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">神龙</a></h1>
+  <h2><a href="/">卧龙茗舌的博客</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/5loongyun">卧龙云点播</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+    <li> <a href="/sitemap.xml">Sitemap</a> </li>
+    <li> <a href="/atom.xml">RSS</a> </li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-07-21T03:51:56.000Z"><a href="/program/use-npoi-to-operate-excel/">7月 21 2014</a></time>
+      
+      
+  
+    <h1 class="title">使用NPOI操作Excel文件</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>NPOI来操作Excel(现在也可以操作Word)非常方便,现在NPOI2已经出了,可以支持office2007以后的版本.<br>按照官方推荐的方式,试了一下自动识别Excel版本的功能,首先简要介绍一下:</p>
+<p><a id="more"></a><br><strong>NPOI2的主要部件</strong></p>
+<pre><code>NPOI <span class="number">2.0</span>有几个DLL构成，他们分别是NPOI<span class="preprocessor">.DLL</span>，NPOI<span class="preprocessor">.OOXML</span><span class="preprocessor">.DLL</span>, NPOI<span class="preprocessor">.OpenXml</span>4Net<span class="preprocessor">.dll</span>, 
+NPOI<span class="preprocessor">.OpenXmlFormats</span><span class="preprocessor">.dll</span>，其中后三个是<span class="number">2.0</span>新加的库。
+
+NPOI<span class="preprocessor">.DLL</span>中包含的模块：
+
+NPOI<span class="preprocessor">.Util</span>   基础辅助库  
+  NPOI<span class="preprocessor">.POIFS</span>   OLE2格式读写库，主要负责处理DocumentInformation 
+  NPOI<span class="preprocessor">.DDF</span>   Microsoft Drawing格式读写库   
+  NPOI<span class="preprocessor">.SS</span>   Excel <span class="number">2003</span>和Excel <span class="number">2007</span>操作库共用的接口库以及公用模块实现，如公式计算库  
+  NPOI<span class="preprocessor">.HPSF</span>   OLE2的Summary Information和Document Summary Information属性读写库  
+  NPOI<span class="preprocessor">.HSSF</span>   Excel BIFF格式读写库，这是用户用的最多的命名空间  
+
+NPOI<span class="preprocessor">.OOXML</span>中包含的模块
+  NPOI<span class="preprocessor">.XSSF</span> Excel <span class="number">2007</span>操作库，大部分对象都实现了NPOI<span class="preprocessor">.SS</span>的接口 
+  NPOI<span class="preprocessor">.XWPF</span> Word <span class="number">2007</span>操作库
+
+NPOI<span class="preprocessor">.OpenXml</span>4Net<span class="preprocessor">.DLL</span>中包含的模块
+  只有一个，即NPOI<span class="preprocessor">.OpenXml</span>4Net，它是从POI的子项目OpenXml4j移植过来的，其功能类似于
+  NPOI<span class="preprocessor">.POIFS</span>，只是它操作的是OOXML格式。这个模块和微软提供的System<span class="preprocessor">.Packaging</span>功能是
+  一致的，只是System<span class="preprocessor">.Packaging</span>支持<span class="preprocessor">.Net</span> <span class="number">3.0</span>以上，这个支持<span class="preprocessor">.NET</span> <span class="number">2.0</span>。
+
+NPOI<span class="preprocessor">.OpenXmlFormats</span><span class="preprocessor">.DLL</span>中包含的模块
+  也只有一个，即OpenXmlFormats，它定义了所有OOXML对象和C<span class="preprocessor">#对象的映射关系，并协助进行</span>
+  序列化和反序列化，从而使文件读写层和逻辑层分离。
+</code></pre><p>引用:<a href="http://tonyqus.sinaapp.com/archives/575" target="_blank" rel="external">http://tonyqus.sinaapp.com/archives/575</a></p>
+<p><strong>读取Excel文件</strong></p>
+<p>直接上代码,很简单</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">string filepath = string<span class="preprocessor">.Empty</span><span class="comment">;</span></div><div class="line"></div><div class="line">if (ofd_excel<span class="preprocessor">.ShowDialog</span>() == System<span class="preprocessor">.Windows</span><span class="preprocessor">.Forms</span><span class="preprocessor">.DialogResult</span><span class="preprocessor">.OK</span>)</div><div class="line">{</div><div class="line">	filepath = ofd_excel<span class="preprocessor">.FileName</span><span class="comment">;</span></div><div class="line">	tb_filepath<span class="preprocessor">.Text</span> = filepath<span class="comment">;</span></div><div class="line">}</div><div class="line"></div><div class="line">FileStream fs = File<span class="preprocessor">.OpenRead</span>(filepath)<span class="comment">;</span></div><div class="line">IWorkbook workbook = WorkbookFactory<span class="preprocessor">.Create</span>(fs)<span class="comment">;</span></div><div class="line"></div><div class="line">//show them all</div><div class="line">ISheet sheet = workbook<span class="preprocessor">.GetSheet</span>(<span class="string">"Sheet1"</span>)<span class="comment">;</span></div><div class="line"></div><div class="line">int sindex = <span class="number">3</span><span class="comment">;</span></div><div class="line">string[] slist = new string[<span class="number">7</span>]<span class="comment">;</span></div><div class="line"></div><div class="line">while (true)</div><div class="line">{</div><div class="line">	if (sheet<span class="preprocessor">.GetRow</span>(sindex)<span class="preprocessor">.GetCell</span>(<span class="number">0</span>)<span class="preprocessor">.ToString</span>()<span class="preprocessor">.Length</span> &lt; <span class="number">1</span>)</div><div class="line">	    <span class="keyword">break</span><span class="comment">;</span></div><div class="line"></div><div class="line">	for (int i = <span class="number">0</span><span class="comment">; i &lt; 7; i++)</span></div><div class="line">	{</div><div class="line">	    slist[i] = sheet<span class="preprocessor">.GetRow</span>(sindex)<span class="preprocessor">.GetCell</span>(i)<span class="preprocessor">.ToString</span>()<span class="comment">;</span></div><div class="line">	}</div><div class="line"></div><div class="line">	ListViewItem lvi = new ListViewItem(slist)<span class="comment">;</span></div><div class="line">	lv_main<span class="preprocessor">.Items</span><span class="preprocessor">.Add</span>(lvi)<span class="comment">;</span></div><div class="line">	sindex++<span class="comment">;</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>参考:<a href="http://tonyqus.sinaapp.com/npoi2tutorial" target="_blank" rel="external">http://tonyqus.sinaapp.com/npoi2tutorial</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/program/">Program</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/npoi/">NPOI</a>
+  </div>
+
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<section id="comment">
+  <!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"5loong"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- Duoshuo Comment END -->
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:godloong.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/computer/">Computer</a><small>2</small></li>
+  
+    <li><a href="/categories/program/">Program</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/everything/">Everything</a><small>1</small></li>
+  
+    <li><a href="/tags/ie/">IE</a><small>1</small></li>
+  
+    <li><a href="/tags/npoi/">NPOI</a><small>1</small></li>
+  
+    <li><a href="/tags/services/">Services</a><small>1</small></li>
+  
+    <li><a href="/tags/sqlite/">Sqlite</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 卧龙茗舌
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="http://libs.useso.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?c0681983e856dfafbe2c6d1a3f3d5c34";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
